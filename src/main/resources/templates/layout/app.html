@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th>
+
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<title th:text="${titulo} + ' ' + WebApp"></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">SB</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+					aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarColor01">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" th:href="@{/inicio}">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/clientes}">Clientes</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+<div class="container mt-3">
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			<symbol id="check-circle-fill" viewBox="0 0 16 16">
+				<path
+					d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+			</symbol>
+			<symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+				<path
+					d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+			</symbol>
+		</svg>
+
+		<div class="alert alert-success d-flex alert-dismissible fade show" role="alert" th:if="${success != null}">
+			<svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:" width="25px" height="25px">
+				<use xlink:href="#check-circle-fill" />
+			</svg>
+			<div th:text="${success}"></div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<div class="alert alert-danger d-flex alert-dismissible fade show" role="alert" th:if="${error != null}">
+			<svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:" width="25px" height="25px">
+				<use xlink:href="#exclamation-triangle-fill" />
+			</svg>
+			<div th:text="${error}"></div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+</div>
+	</header>
+
+	<div class="container mt-3">
+		<h3 th:text="${titulo}" class="my-3"></h3>
+	</div>
+
+	<footer th:fragment="footer" class="footer text-bg-dark p-3 fixed-bottom">
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			WebApp StringBoot
+			<a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+		</div>
+	</footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+	crossorigin="anonymous"></script>
+
+</html>
