@@ -37,6 +37,8 @@ public class Cliente implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date createdAt;
 	
+	private String foto;
+	
 	@PrePersist
 	public void prePersist() {
 		createdAt = new Date();
@@ -81,6 +83,18 @@ public class Cliente implements Serializable {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
+	public boolean tieneFoto() {
+        return foto != null && !foto.isEmpty();
+    }
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

@@ -50,6 +50,13 @@
 			<div th:text="${success}"></div>
 			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
+		<div class="alert alert-info d-flex alert-dismissible fade show" role="alert" th:if="${info != null}">
+			<svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:" width="25px" height="25px">
+				<use xlink:href="#check-circle-fill" />
+			</svg>
+			<div th:text="${info}"></div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 		<div class="alert alert-danger d-flex alert-dismissible fade show" role="alert" th:if="${error != null}">
 			<svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:" width="25px" height="25px">
 				<use xlink:href="#exclamation-triangle-fill" />
